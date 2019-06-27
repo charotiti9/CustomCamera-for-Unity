@@ -23,12 +23,12 @@ public class Move_WheelClick : CameraSystem
     /// </summary>
     public override void CommonUpdate()
     {
-        CameraWheelMove();
+        Move();
     }
 
 
 
-    void CameraWheelMove()
+    void Move()
     {
         if (Input.GetMouseButton(2))
         {

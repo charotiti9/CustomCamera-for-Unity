@@ -30,12 +30,12 @@ public class Zoom_Wheel : CameraSystem
     /// </summary>
     public override void CommonUpdate()
     {
-        CameraZoom();
+        Zoom();
     }
 
 
 
-    private void CameraZoom()
+    private void Zoom()
     {
         // 원하는 거리 설정
         desiredDistance -= Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * zoomRate * Mathf.Abs(desiredDistance);

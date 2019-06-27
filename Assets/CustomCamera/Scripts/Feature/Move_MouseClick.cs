@@ -11,7 +11,7 @@ public class Move_MouseClick : CameraSystem
         WheelClick
     }
     [Header("마우스 입력키")]
-    public MouseInput mouseInput;
+    public MouseInput mouseInput = MouseInput.WheelClick;
     [Header("움직임 속도")]
     [Range(0,1)]
     public float moveSpeed = 0.3f;
@@ -23,7 +23,7 @@ public class Move_MouseClick : CameraSystem
     /// </summary>
     public override void CommonStart()
     {
-        target = camManager.target;
+
     }
 
     /// <summary>
@@ -33,8 +33,6 @@ public class Move_MouseClick : CameraSystem
     {
         Move();
     }
-
-
 
     void Move()
     {

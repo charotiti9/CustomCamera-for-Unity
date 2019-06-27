@@ -11,7 +11,7 @@ public class Rotation_MouseClick : CameraSystem
         WheelClick
     }
     [Header("마우스 입력키")]
-    public MouseInput mouseInput;
+    public MouseInput mouseInput = MouseInput.RightClick;
     [Header("속도")]
     public float rotSpeed = 250.0f;
     public float smoothness = 5.0f;

@@ -41,6 +41,8 @@ public class CameraManager : MonoBehaviour
         {
             camSystems[i].CommonUpdate();
         }
+
+        PostTransfrom();
     }
 
 
@@ -99,15 +101,9 @@ public class CameraManager : MonoBehaviour
         camSystems[num].isActive = isOn;
     }
 
-    /// <summary>
-    /// 최종 카메라와 아이타겟의 위치/회전값
-    /// </summary>
-    void PostTransform()
+    void PostTransfrom()
     {
-        //// 최종 위치 설정
-        //transform.position = target.position - (transform.rotation * Vector3.forward * currentDistance + targetOffset);
-
-        //// 현재 각도 --> 원하는 각도 회전
-        //transform.rotation = Quaternion.Lerp(currentRotation, desiredRotation, Time.deltaTime * smoothness);
+        // 최종 위치 설정
+        transform.position = target.position - (transform.rotation * Vector3.forward * distance + targetOffset);
     }
 }

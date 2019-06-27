@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class CameraSystem : MonoBehaviour
 {
-    public bool isActive;
+    public bool isActive = true;
     internal CameraManager camManager;
     private void Awake()
     {

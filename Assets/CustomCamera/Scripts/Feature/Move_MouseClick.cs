@@ -23,7 +23,7 @@ public class Move_MouseClick : CameraSystem
     /// </summary>
     public override void CommonStart()
     {
-
+        target = camManager.target;
     }
 
     /// <summary>

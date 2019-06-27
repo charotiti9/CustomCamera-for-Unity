@@ -54,6 +54,9 @@ public class Zoom_MouseClick : CameraSystem
             desiredDistance = Mathf.Clamp(desiredDistance, minWheelDis, maxWheelDis);
             // 현재 거리 설정
             currentDistance = Mathf.Lerp(currentDistance, desiredDistance, Time.deltaTime * smoothness);
+
+            // 매니저에 갱신
+            camManager.distance = currentDistance;
         }  
     }
 }

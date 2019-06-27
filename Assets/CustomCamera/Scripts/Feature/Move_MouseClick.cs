@@ -2,8 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move_WheelClick : CameraSystem
+public class Move_MouseClick : CameraSystem
 {
+    public enum MouseInput
+    {
+        LeftClick,
+        RightClick,
+        WheelClick
+    }
+    [Header("마우스 입력키")]
+    public MouseInput mouseInput;
     [Header("움직임 속도")]
     [Range(0,1)]
     public float moveSpeed = 0.3f;
@@ -30,7 +38,7 @@ public class Move_WheelClick : CameraSystem
 
     void Move()
     {
-        if (Input.GetMouseButton(2))
+        if (Input.GetMouseButton((int)mouseInput))
         {
             // Y는 World 공간에서 
             target.rotation = transform.rotation;

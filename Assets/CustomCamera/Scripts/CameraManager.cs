@@ -96,6 +96,18 @@ public class CameraManager : MonoBehaviour
     /// <param name="isOn">true: 활성화 / false: 비활성화</param>
     void SetSystemActivate(int num, bool isOn = true)
     {
-        camSystems[num].gameObject.SetActive(isOn);
+        camSystems[num].isActive = isOn;
+    }
+
+    /// <summary>
+    /// 최종 카메라와 아이타겟의 위치/회전값
+    /// </summary>
+    void PostTransform()
+    {
+        //// 최종 위치 설정
+        //transform.position = target.position - (transform.rotation * Vector3.forward * currentDistance + targetOffset);
+
+        //// 현재 각도 --> 원하는 각도 회전
+        //transform.rotation = Quaternion.Lerp(currentRotation, desiredRotation, Time.deltaTime * smoothness);
     }
 }

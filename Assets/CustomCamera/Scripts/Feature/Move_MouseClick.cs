@@ -31,7 +31,8 @@ public class Move_MouseClick : CameraSystem
     /// </summary>
     public override void CommonUpdate()
     {
-        Move();
+        if(isActive)
+            Move();
     }
 
     void Move()

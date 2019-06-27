@@ -41,7 +41,8 @@ public class Rotation_MouseClick : CameraSystem
     /// </summary>
     public override void CommonUpdate()
     {
-        Rotation();
+        if (isActive)
+            Rotation();
     }
 
     void Rotation()
@@ -56,9 +57,6 @@ public class Rotation_MouseClick : CameraSystem
             // 원하는 각도와 현재 각도
             desiredRotation = Quaternion.Euler(yDeg, xDeg, 0);
             currentRotation = transform.rotation;
-
-            // 현재 각도 --> 원하는 각도 회전
-            transform.rotation = Quaternion.Lerp(currentRotation, desiredRotation, Time.deltaTime * smoothness);
         }
     }
 }

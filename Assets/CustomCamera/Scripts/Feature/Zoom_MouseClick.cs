@@ -38,7 +38,8 @@ public class Zoom_MouseClick : CameraSystem
     /// </summary>
     public override void CommonUpdate()
     {
-        Zoom();
+        if (isActive)
+            Zoom();
     }
 
     private void Zoom()

@@ -30,7 +30,8 @@ public class Zoom_Wheel : CameraSystem
     /// </summary>
     public override void CommonUpdate()
     {
-        Zoom();
+        if (isActive)
+            Zoom();
     }
 
 
@@ -43,8 +44,5 @@ public class Zoom_Wheel : CameraSystem
         desiredDistance = Mathf.Clamp(desiredDistance, minWheelDis, maxWheelDis);
         // 현재 거리 설정
         currentDistance = Mathf.Lerp(currentDistance, desiredDistance, Time.deltaTime * smoothness);
-
-        // 최종 위치 설정
-        transform.position = camManager.target.position - (transform.rotation * Vector3.forward * currentDistance + camManager.targetOffset);
     }
 }

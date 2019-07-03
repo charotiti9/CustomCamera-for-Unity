@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{0304B507-46E8-689D-5794-CB36316B1D88}</ProjectGuid>
+    <ProjectGuid>{A38172A3-4AED-4347-4CC2-938AB2954FE5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,23 +62,24 @@
   <ItemGroup>
     <Compile Include="Assets\CustomCamera\Scripts\CameraManager.cs" />
     <Compile Include="Assets\CustomCamera\Scripts\CameraSystem.cs" />
-    <Compile Include="Assets\CustomCamera\Scripts\Feature\Move_WheelClick.cs" />
+    <Compile Include="Assets\CustomCamera\Scripts\Feature\Move_MouseClick.cs" />
+    <Compile Include="Assets\CustomCamera\Scripts\Feature\Rotation_MouseClick.cs" />
+    <Compile Include="Assets\CustomCamera\Scripts\Feature\Zoom_MouseClick.cs" />
     <Compile Include="Assets\CustomCamera\Scripts\Feature\Zoom_Wheel.cs" />
-    <Compile Include="Assets\CustomCamera\Scripts\Preset\ObjectCam.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/02. Work/04.Test/CameraTest/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>E:/02. Work/04.Test/CustomCamProject/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>E:/02. Work/04.Test/CameraTest/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>E:/02. Work/04.Test/CustomCamProject/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>E:/02. Work/04.Test/CameraTest/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>E:/02. Work/04.Test/CustomCamProject/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/02. Work/04.Test/CameraTest/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:/02. Work/04.Test/CustomCamProject/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>E:/02. Work/04.Test/CameraTest/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>E:/02. Work/04.Test/CustomCamProject/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/2018.3.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -282,13 +283,13 @@
       <HintPath>C:/Program Files/Unity/2018.3.14f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>E:/02. Work/04.Test/CameraTest/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>E:/02. Work/04.Test/CustomCamProject/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>E:/02. Work/04.Test/CameraTest/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>E:/02. Work/04.Test/CustomCamProject/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>E:/02. Work/04.Test/CameraTest/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>E:/02. Work/04.Test/CustomCamProject/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/2018.3.14f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

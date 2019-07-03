@@ -46,7 +46,13 @@ public class Zoom_MouseClick : CameraSystem
     {
         xAdj = Input.GetAxis("Mouse X");
         yAdj = Input.GetAxis("Mouse Y");
-        if (Input.GetMouseButton((int)mouseInput))
+
+        if (Input.GetMouseButtonDown((int)mouseInput))
+        {
+            currentDistance = camManager.distance;
+            desiredDistance = camManager.distance;
+        }
+        else if (Input.GetMouseButton((int)mouseInput))
         {
             // 원하는 거리 설정
             desiredDistance -= xAdj + yAdj * Time.deltaTime * Mathf.Abs(desiredDistance);

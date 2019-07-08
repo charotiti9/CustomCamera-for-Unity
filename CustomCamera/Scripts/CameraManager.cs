@@ -42,7 +42,7 @@ public class CameraManager : MonoBehaviour
             camSystems[i].CommonUpdate();
         }
 
-        PostTransfrom();
+        PostTransform();
     }
 
 
@@ -101,7 +101,7 @@ public class CameraManager : MonoBehaviour
         camSystems[num].isActive = isOn;
     }
 
-    void PostTransfrom()
+    void PostTransform()
     {
         // 최종 위치 설정
         transform.position = target.position - (transform.rotation * Vector3.forward * distance + targetOffset);

@@ -35,19 +35,19 @@ public class Move_Keyboard : CameraSystem
     {
         if (Input.GetKey(fowardKey))
         {
-            target.position += Vector3.forward * 3 * Time.deltaTime;
+            target.position += transform.up * moveSpeed * Time.deltaTime;
         }
         if (Input.GetKey(LeftKey))
         {
-            target.position += -Vector3.right * moveSpeed * Time.deltaTime;
+            target.position += -transform.right * moveSpeed * Time.deltaTime;
         }
         if (Input.GetKey(BackKey))
         {
-            target.position += -Vector3.forward * moveSpeed * Time.deltaTime;
+            target.position += -transform.up * moveSpeed * Time.deltaTime;
         }
         if (Input.GetKey(RightKey))
         {
-            target.position += Vector3.right * moveSpeed * Time.deltaTime;
+            target.position += transform.right * moveSpeed * Time.deltaTime;
         }
     }
 }

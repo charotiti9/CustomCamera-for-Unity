@@ -10,6 +10,8 @@ public class Move_MouseClick : CameraSystem
         RightClick,
         WheelClick
     }
+    [Header("마우스 클릭으로 움직이게 할것인지 결정")]
+    public bool requireClick = true;
     [Header("마우스 입력키")]
     public MouseInput mouseInput = MouseInput.WheelClick;
     [Header("움직임 속도")]
@@ -37,7 +39,7 @@ public class Move_MouseClick : CameraSystem
 
     void Move()
     {
-        if (Input.GetMouseButton((int)mouseInput))
+        if (Input.GetMouseButton((int)mouseInput) || !requireClick)
         {
             // Y는 World 공간에서 
             target.rotation = transform.rotation;

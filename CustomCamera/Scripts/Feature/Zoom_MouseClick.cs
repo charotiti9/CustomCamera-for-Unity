@@ -10,6 +10,8 @@ public class Zoom_MouseClick : CameraSystem
         RightClick,
         WheelClick
     }
+    [Header("마우스 클릭으로 움직이게 할것인지 결정")]
+    public bool requireClick = true;
     [Header("마우스 입력키")]
     public MouseInput mouseInput = MouseInput.LeftClick;
     [Header("거리 한도")]
@@ -43,7 +45,7 @@ public class Zoom_MouseClick : CameraSystem
         xAdj = Input.GetAxis("Mouse X");
         yAdj = Input.GetAxis("Mouse Y");
 
-        if (Input.GetMouseButton((int)mouseInput))
+        if (Input.GetMouseButton((int)mouseInput) || !requireClick)
         {
             // 원하는 거리 설정
             camManager.desiredDistance -= xAdj + yAdj * Time.deltaTime * Mathf.Abs(camManager.desiredDistance);

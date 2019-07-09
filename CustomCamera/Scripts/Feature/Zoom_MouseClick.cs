@@ -18,8 +18,6 @@ public class Zoom_MouseClick : CameraSystem
     [Header("속도")]
     public float smoothness = 5.0f;
 
-    private float currentDistance;               // 현재 거리값
-    private float desiredDistance;               // 원하는 거리값
     private float xAdj = 0.0f;                   // X 보정값
     private float yAdj = 0.0f;                   // Y 보정값
 
@@ -28,9 +26,7 @@ public class Zoom_MouseClick : CameraSystem
     /// </summary>
     public override void CommonStart()
     {
-        // 초기화
-        currentDistance = camManager.distance;
-        desiredDistance = camManager.distance;
+
     }
 
     /// <summary>
@@ -47,22 +43,14 @@ public class Zoom_MouseClick : CameraSystem
         xAdj = Input.GetAxis("Mouse X");
         yAdj = Input.GetAxis("Mouse Y");
 
-        if (Input.GetMouseButtonDown((int)mouseInput))
-        {
-            currentDistance = camManager.distance;
-            desiredDistance = camManager.distance;
-        }
-        else if (Input.GetMouseButton((int)mouseInput))
+        if (Input.GetMouseButton((int)mouseInput))
         {
             // 원하는 거리 설정
-            desiredDistance -= xAdj + yAdj * Time.deltaTime * Mathf.Abs(desiredDistance);
+            camManager.desiredDistance -= xAdj + yAdj * Time.deltaTime * Mathf.Abs(camManager.desiredDistance);
             // Zoom 한도 보정
-            desiredDistance = Mathf.Clamp(desiredDistance, minWheelDis, maxWheelDis);
+            camManager.desiredDistance = Mathf.Clamp(camManager.desiredDistance, minWheelDis, maxWheelDis);
             // 현재 거리 설정
-            currentDistance = Mathf.Lerp(currentDistance, desiredDistance, Time.deltaTime * smoothness);
-
-            // 매니저에 갱신
-            camManager.distance = currentDistance;
-        }  
+            camManager.currentDistance = Mathf.Lerp(camManager.currentDistance, camManager.desiredDistance, Time.deltaTime * smoothness);
+        }
     }
 }

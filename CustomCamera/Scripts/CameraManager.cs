@@ -16,6 +16,8 @@ public class CameraManager : MonoBehaviour
     [Header("카메라와 디폴트 타겟 거리")]
     public float distance = 5.0f;
 
+    internal float currentDistance;             // 현재 거리
+    internal float desiredDistance;             // 원하는 거리
     private CameraSystem[] camSystems;          // 카메라 시스템들
     #endregion
 
@@ -77,7 +79,8 @@ public class CameraManager : MonoBehaviour
 
         // 거리설정
         distance = Vector3.Distance(transform.position, target.position);
-
+        currentDistance = distance;
+        desiredDistance = distance;
     }
 
     /// <summary>
@@ -101,9 +104,12 @@ public class CameraManager : MonoBehaviour
         camSystems[num].isActive = isOn;
     }
 
+    /// <summary>
+    /// 후처리 최종 위치 설정(Zoom, Move)
+    /// </summary>
     void PostTransform()
     {
-        // 최종 위치 설정
+        distance = currentDistance;
         transform.position = target.position - (transform.rotation * Vector3.forward * distance + targetOffset);
     }
 }

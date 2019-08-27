@@ -16,6 +16,8 @@ public class CameraManager : MonoBehaviour
     [Header("카메라와 디폴트 타겟 거리")]
     public float distance = 5.0f;
 
+    private string targetName = "EyeTarget";
+
     internal float currentDistance;             // 현재 거리
     internal float desiredDistance;             // 원하는 거리
     private CameraSystem[] camSystems;          // 카메라 시스템들
@@ -30,9 +32,7 @@ public class CameraManager : MonoBehaviour
     private void Start()
     {
         for (int i = 0; i < camSystems.Length; i++)
-        {
             camSystems[i].CommonStart();
-        }
     }
 
     private void OnEnable() { Init(); }
@@ -40,13 +40,10 @@ public class CameraManager : MonoBehaviour
     private void LateUpdate()
     {
         for (int i = 0; i < camSystems.Length; i++)
-        {
             camSystems[i].CommonUpdate();
-        }
 
         PostTransform();
     }
-
 
     /// <summary>
     /// 타겟 위치 초기화
@@ -56,25 +53,26 @@ public class CameraManager : MonoBehaviour
         if (!GetComponent<Camera>())
             throw new System.Exception("카메라가 없습니다. 컴포넌트를 카메라 객체에 붙여주세요.");
 
-        //타겟이 없다면 타겟을 만들고 타겟의 위치를 default위치로 설정한다.
+        //3인칭 타겟이 없다면 타겟 임의생성 후 설정
         if (!target)
         {
             Debug.Log("타겟이 설정되지 않았습니다. 임의의 타겟을 만듭니다.");
-            GameObject tempTarget = new GameObject("EyeTarget");
+            GameObject tempTarget = new GameObject(targetName);
             tempTarget.transform.position = transform.position + (transform.forward * distance);
             target = tempTarget.transform;
         }
-        // 타겟이 있다면 타겟 자리에 가상의 오브젝트를 생성하여 기준으로 삼는다.
+        // 타겟이 있다면 타겟 자리에 가상의 오브젝트를 생성
         else
         {
-            if (!GameObject.Find("EyeTarget"))
+            // 재생성 방지
+            if (!GameObject.Find(targetName))
             {
-                GameObject tempTarget = new GameObject("EyeTarget");
+                GameObject tempTarget = new GameObject(targetName);
                 tempTarget.transform.position = target.position;
                 target = tempTarget.transform;
             }
             else
-                target = GameObject.Find("EyeTarget").transform;
+                target = GameObject.Find(targetName).transform;
         }
 
         // 거리설정
@@ -110,6 +108,7 @@ public class CameraManager : MonoBehaviour
     void PostTransform()
     {
         distance = currentDistance;
-        transform.position = target.position - (transform.rotation * Vector3.forward * distance + targetOffset);
+        transform.position = target.position - (target.forward * distance + targetOffset);
+        transform.rotation = target.rotation;
     }
 }

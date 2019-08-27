@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CameraSystem : MonoBehaviour
+public class CameraSystem : MonoBehaviour
 {
     public bool isActive = true;
     internal CameraManager camManager;
@@ -28,6 +28,6 @@ public abstract class CameraSystem : MonoBehaviour
         return Mathf.Clamp(angle, min, max);
     }
 
-    public abstract void CommonStart();
-    public abstract void CommonUpdate();
+    public virtual void CommonStart() { }
+    public virtual void CommonUpdate() { }
 }

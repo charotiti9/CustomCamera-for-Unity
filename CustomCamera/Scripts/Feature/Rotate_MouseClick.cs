@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotation_MouseClick : CameraSystem
+public class Rotate_MouseClick : CameraSystem
 {
     public enum MouseInput
     {
@@ -58,10 +58,9 @@ public class Rotation_MouseClick : CameraSystem
             yDeg = ClampAngle(yDeg, yMinLimit, yMaxLimit);
             // 원하는 각도와 현재 각도
             desiredRotation = Quaternion.Euler(yDeg, xDeg, 0);
-            currentRotation = transform.rotation;
 
-            // 현재 각도 --> 원하는 각도 회전
-            transform.rotation = Quaternion.Lerp(currentRotation, desiredRotation, Time.deltaTime * smoothness);
+            currentRotation = camManager.target.rotation;
+            camManager.target.rotation = Quaternion.Lerp(currentRotation, desiredRotation, Time.deltaTime * smoothness);
         }
     }
 }

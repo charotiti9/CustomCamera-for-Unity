@@ -12,14 +12,12 @@ public class Move_Keyboard : CameraSystem
     [Header("움직임 속도")]
     public float moveSpeed = 3f;
 
-    private Transform target;
-
     /// <summary>
     /// CameraController에서 실행할 공통된 스타트 부분
     /// </summary>
     public override void CommonStart()
     {
-        target = camManager.target;
+
     }
 
     /// <summary>
@@ -35,19 +33,19 @@ public class Move_Keyboard : CameraSystem
     {
         if (Input.GetKey(fowardKey))
         {
-            target.position += transform.up * moveSpeed * Time.deltaTime;
+            camManager.target.position += transform.up * moveSpeed * Time.deltaTime;
         }
         if (Input.GetKey(LeftKey))
         {
-            target.position += -transform.right * moveSpeed * Time.deltaTime;
+            camManager.target.position += -transform.right * moveSpeed * Time.deltaTime;
         }
         if (Input.GetKey(BackKey))
         {
-            target.position += -transform.up * moveSpeed * Time.deltaTime;
+            camManager.target.position += -transform.up * moveSpeed * Time.deltaTime;
         }
         if (Input.GetKey(RightKey))
         {
-            target.position += transform.right * moveSpeed * Time.deltaTime;
+            camManager.target.position += transform.right * moveSpeed * Time.deltaTime;
         }
     }
 }

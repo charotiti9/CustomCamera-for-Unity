@@ -45,6 +45,7 @@ public class Zoom_Wheel : CameraSystem
     IEnumerator ZoomCoroutine()
     {
         isCoroutine = true;
+        camManager.desiredDistance = camManager.currentDistance;
         do
         {
             // 원하는 거리 설정

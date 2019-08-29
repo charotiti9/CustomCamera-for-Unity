@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CameraManager))]
 public class CameraSystem : MonoBehaviour
 {
     public bool isActive = true;

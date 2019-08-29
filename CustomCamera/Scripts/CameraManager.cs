@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[DisallowMultipleComponent]
 /// <summary>
 /// 카메라의 초기위치를 설정하고, 타겟을 가지고 있음
 /// 각 카메라 시스템들의 함수를 호출하고 일괄처리

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Zoom_Wheel : CameraSystem
+public class TransformZoom_Wheel : CameraSystem
 {
     [Header("거리 한도")]
     public float maxWheelDis = 20;
@@ -10,7 +10,7 @@ public class Zoom_Wheel : CameraSystem
     [Header("비율")]
     public int zoomRate = 40;
     [Header("속도")]
-    public float smoothness = 5.0f;
+    public float speed = 5.0f;
 
     private bool isCoroutine;                    // 항상 실행되지 않게 하기 위해
 
@@ -45,18 +45,18 @@ public class Zoom_Wheel : CameraSystem
     IEnumerator ZoomCoroutine()
     {
         isCoroutine = true;
-        camManager.desiredDistance = camManager.currentDistance;
+        camManager.wantedDistance = camManager.currentDistance;
         do
         {
             // 원하는 거리 설정
-            camManager.desiredDistance -= Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * zoomRate * Mathf.Abs(camManager.desiredDistance);
+            camManager.wantedDistance -= Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * zoomRate * Mathf.Abs(camManager.wantedDistance);
             // Zoom 한도 보정
-            camManager.desiredDistance = Mathf.Clamp(camManager.desiredDistance, minWheelDis, maxWheelDis);
+            camManager.wantedDistance = Mathf.Clamp(camManager.wantedDistance, minWheelDis, maxWheelDis);
             // 현재 거리 설정
-            camManager.currentDistance = Mathf.Lerp(camManager.currentDistance, camManager.desiredDistance, Time.deltaTime * smoothness);
+            camManager.currentDistance = Mathf.Lerp(camManager.currentDistance, camManager.wantedDistance, Time.deltaTime * speed);
 
             yield return null;
-        } while (camManager.currentDistance - camManager.desiredDistance > 0.1f || camManager.currentDistance - camManager.desiredDistance < -0.1f);
+        } while (camManager.currentDistance - camManager.wantedDistance > 0.1f || camManager.currentDistance - camManager.wantedDistance < -0.1f);
         isCoroutine = false;
     }
 }

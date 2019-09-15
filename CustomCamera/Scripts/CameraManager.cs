@@ -20,13 +20,18 @@ public class CameraManager : MonoBehaviour
     private string targetName = "EyeTarget";
 
     internal float currentDistance;             // 현재 거리
-    internal float desiredDistance;             // 원하는 거리
+    internal float wantedDistance;              // 원하는 거리
+    internal float currentFov;                  // 현재 fov
+    internal float wantedFov;                   // 원하는 fov
+
+    internal Camera cam;                        // 카메라
     private CameraSystem[] camSystems;          // 카메라 시스템들
     #endregion
 
     private void Awake()
     {
         camSystems = GetComponents<CameraSystem>();
+        cam = GetComponent<Camera>();
         Init();
     }
 
@@ -78,8 +83,11 @@ public class CameraManager : MonoBehaviour
 
         // 거리설정
         distance = Vector3.Distance(transform.position, target.position);
+
         currentDistance = distance;
-        desiredDistance = distance;
+        wantedDistance = distance;
+        currentFov = cam.fieldOfView;
+        wantedFov = currentFov;
     }
 
     /// <summary>
@@ -109,6 +117,10 @@ public class CameraManager : MonoBehaviour
     void PostTransform()
     {
         distance = currentDistance;
+
+        // 조정
+        cam.fieldOfView = currentFov;
+
         transform.position = target.position - (target.forward * distance + targetOffset);
         transform.rotation = target.rotation;
     }

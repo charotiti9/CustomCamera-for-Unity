@@ -7,9 +7,10 @@ public class CameraSystem : MonoBehaviour
 {
     public bool isActive = true;
     internal CameraManager camManager;
+
+
     private void Awake()
     {
-        // 매니저 찾기
         camManager = GetComponent<CameraManager>();
     }
 

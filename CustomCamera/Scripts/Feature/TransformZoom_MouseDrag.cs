@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Zoom_MouseClick : CameraSystem
+public class TransformZoom_MouseDrag : CameraSystem
 {
     public enum MouseInput
     {
@@ -18,7 +18,7 @@ public class Zoom_MouseClick : CameraSystem
     public float maxWheelDis = 20;
     public float minWheelDis = 0.6f;
     [Header("속도")]
-    public float smoothness = 5.0f;
+    public float speed = 5.0f;
 
     private float xAdj = 0.0f;                   // X 보정값
     private float yAdj = 0.0f;                   // Y 보정값
@@ -48,11 +48,11 @@ public class Zoom_MouseClick : CameraSystem
         if (Input.GetMouseButton((int)mouseInput) || !requireClick)
         {
             // 원하는 거리 설정
-            camManager.desiredDistance -= xAdj + yAdj * Time.deltaTime * Mathf.Abs(camManager.desiredDistance);
+            camManager.wantedDistance -= xAdj + yAdj * Time.deltaTime * Mathf.Abs(camManager.wantedDistance);
             // Zoom 한도 보정
-            camManager.desiredDistance = Mathf.Clamp(camManager.desiredDistance, minWheelDis, maxWheelDis);
+            camManager.wantedDistance = Mathf.Clamp(camManager.wantedDistance, minWheelDis, maxWheelDis);
             // 현재 거리 설정
-            camManager.currentDistance = Mathf.Lerp(camManager.currentDistance, camManager.desiredDistance, Time.deltaTime * smoothness);
+            camManager.currentDistance = Mathf.Lerp(camManager.currentDistance, camManager.wantedDistance, Time.deltaTime * speed);
         }
     }
 }

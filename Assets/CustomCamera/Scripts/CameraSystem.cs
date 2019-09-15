@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CameraSystem : MonoBehaviour
+[RequireComponent(typeof(CameraManager))]
+public class CameraSystem : MonoBehaviour
 {
     public bool isActive = true;
     internal CameraManager camManager;
+
+
     private void Awake()
     {
-        // 매니저 찾기
         camManager = GetComponent<CameraManager>();
     }
 
@@ -28,6 +30,6 @@ public abstract class CameraSystem : MonoBehaviour
         return Mathf.Clamp(angle, min, max);
     }
 
-    public abstract void CommonStart();
-    public abstract void CommonUpdate();
+    public virtual void CommonStart() { }
+    public virtual void CommonUpdate() { }
 }

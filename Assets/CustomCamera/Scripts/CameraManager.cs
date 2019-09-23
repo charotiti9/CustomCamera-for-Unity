@@ -65,6 +65,7 @@ public class CameraManager : MonoBehaviour
             Debug.Log("타겟이 설정되지 않았습니다. 임의의 타겟을 만듭니다.");
             GameObject tempTarget = new GameObject(targetName);
             tempTarget.transform.position = transform.position + (transform.forward * distance);
+            tempTarget.transform.rotation = transform.rotation;
             target = tempTarget.transform;
         }
         // 타겟이 있다면 타겟 자리에 가상의 오브젝트를 생성
@@ -75,6 +76,7 @@ public class CameraManager : MonoBehaviour
             {
                 GameObject tempTarget = new GameObject(targetName);
                 tempTarget.transform.position = target.position;
+                tempTarget.transform.rotation = transform.rotation;
                 target = tempTarget.transform;
             }
             else

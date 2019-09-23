@@ -12,22 +12,19 @@ Art and designers know how to deal with Unity, but many have had trouble with th
 
 ## 설치 방법 (How to install)
 
-1. Download
-2. Open the Unity
-i) `Master` Branch: Open File
-ii) `Develop` Branch: Create New Project -> Copy and paste file
-(개발중인 단계로서 권장하지 않음. Not recommended.)
+1. Download `Master` Branch
+2. Open the Unity -> Open File
 
 ---
 
-## 사용 예제
+## 사용 방법 (How to use)
 
 컴포넌트를 메인카메라에 드래그 합니다. Just Drag Component in your main camera.
 
 <img src="https://lh3.googleusercontent.com/ZISyiBmzLhWDvVBFFLocCoZg-yjLa94Ps5RadU-zRJ_KDjXoJvBKn0kfi7OAgWlsBTSbk0ss15jTghNOQWBjq4IPcVL3iu_X3NbPTXsQi9JygCsxY-aE0LpxY14nJQlbyS5HjTcNGPIuly9QiGbmKreAVj1JR8xexF0YgY-EfhlrFf_NWQUnwqlm9WmMIbCcvEEwzMJcYZJHNydEEClEbro2LkAVvlfwac2MNZhjzikcicy7EWnDE-BDgWaxguy_CBw1zbtWGnvSkeWdcYskXFsbHXu2o8jeL4h88JiOOk7Z-XiBZuQHoQxlWHrmX2aWyRa5kp8IJTWTRQnuyF_zzm_nymPEM7y6CJroAN2cfcY3z2xPoC7lVUbmfg2i4lI9NIkAOYRkhiGV3x329FiDcEhuUhnUQGuwpBdy__36-TGjNEQZh7ry4cvkTLS3Ho-0kmyTJibrAvJkpf258urgKIonUCMlgeZLMm8GeDVIjklKB5lCh_GLaHwq0syHq5alTC-R3yc8N1hYnohyAWdgajkyzeKgdvKAY5DFhVnZNesFfKl7HnDL7XiaQW6hW300gyOqB_ecfl9baKR2vHqFvOqpDQTw_LJIZddkH3sP74940fMV-axh_huqE84PmC9II67cWJ9ZnyPlGYsAeqfjVQMPROBPoriBPaqsENITZwwGBFPTr50RRQ=w854-h889-no" width="60%">
 
 컴포넌트의 위치는 `CustomCamera/Scripts/Feature`입니다.
-기능을 드래그하면 자동으로 `CameraManager`가 생성됩니다.
+기능을 드래그하면 자동으로 `CameraManager.cs`가 생성됩니다.
 
 ### CameraManager.cs
 
@@ -38,7 +35,7 @@ ii) `Develop` Branch: Create New Project -> Copy and paste file
 
 - Move_ : 상하좌우로 평행이동
 - Rotate_: 회전
-    - `CameraManager`에서 Distance를 0으로 설정할 시 1인칭 시점 회전
+    - `CameraManager.cs`에서 Distance를 0으로 설정할 시 1인칭 시점 회전
     - 그 외엔 Orbit 회전
 - TransformZoom_: Z축 거리를 이동
 - FovZoom_: 카메라 field of view를 조절(망원경)
@@ -46,7 +43,7 @@ ii) `Develop` Branch: Create New Project -> Copy and paste file
 
 ---
 
-## 업데이트 내역
+## 업데이트 (Update)
 
 - 0.1.0
     - Add Fov feature
@@ -55,11 +52,11 @@ ii) `Develop` Branch: Create New Project -> Copy and paste file
 
 ---
 
-## 정보
+## 정보(Info)
 
 Yong HyeonJeong – [@트위터 주소](https://twitter.com/charo_999) – [charotiti9@gmail.com](mailto:charotiti9@gmail.com)
 
-MIT 라이센스를 준수하며 `LICENSE`에서 자세한 정보를 확인할 수 있습니다.
+MIT 라이센스를 준수하며 `LICENSE`에서 자세한 정보를 확인할 수 있습니다.  
 [https://github.com/charotiti9/CustomCamera-for-Unity](https://github.com/charotiti9/CustomCamera-for-Unity)
 
 ---
@@ -74,5 +71,5 @@ MIT 라이센스를 준수하며 `LICENSE`에서 자세한 정보를 확인할 �
 
 OR
 
-6. `Issues`에 의견을 올려주세요!
-7. 검토 후 반영하겠습니다
+1. `Issues`에 의견을 올려주세요!
+2. 검토 후 반영하겠습니다

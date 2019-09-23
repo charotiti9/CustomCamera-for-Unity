@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TranformZoom_MouseClick : CameraSystem
+public class TransformZoom_MouseClick : CameraSystem
 {
     public enum MouseInput
     {

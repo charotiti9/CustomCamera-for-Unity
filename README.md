@@ -59,7 +59,7 @@ Yong HyeonJeong
 - [@Charo_999](https://twitter.com/charo_999)
 - [charotiti9@gmail.com](mailto:charotiti9@gmail.com)
 
-[MIT 라이센스](https://github.com/charotiti9/charotiti9.github.io/blob/master/LICENSE)를 준수하며 `LICENSE`에서 자세한 정보를 확인할 수 있습니다.  
+[MIT 라이센스](https://github.com/charotiti9/CustomCamera-for-Unity/blob/master/LICENSE)를 준수하며 `LICENSE`에서 자세한 정보를 확인할 수 있습니다.  
 
 ---
 

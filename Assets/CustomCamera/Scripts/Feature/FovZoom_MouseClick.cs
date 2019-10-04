@@ -19,17 +19,11 @@ public class FovZoom_MouseClick : CameraSystem
     [Header("속도")]
     public float speed = 10.0f;
 
-    /// <summary>
-    /// CameraController에서 실행할 공통된 스타트 부분
-    /// </summary>
     public override void CommonStart()
     {
         initialFov = camManager.currentFov;
     }
 
-    /// <summary>
-    /// CameraController에서 실행할 공통된 업데이트 부분
-    /// </summary>
     public override void CommonUpdate()
     {
         if (isActive)

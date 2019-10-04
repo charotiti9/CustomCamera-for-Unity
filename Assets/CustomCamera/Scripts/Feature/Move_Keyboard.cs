@@ -12,17 +12,11 @@ public class Move_Keyboard : CameraSystem
     [Header("움직임 속도")]
     public float moveSpeed = 3f;
 
-    /// <summary>
-    /// CameraController에서 실행할 공통된 스타트 부분
-    /// </summary>
     public override void CommonStart()
     {
 
     }
 
-    /// <summary>
-    /// CameraController에서 실행할 공통된 업데이트 부분
-    /// </summary>
     public override void CommonUpdate()
     {
         if (isActive)

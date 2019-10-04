@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 각 feature들의 부모 클래스.
+/// </summary>
 [RequireComponent(typeof(CameraManager))]
 public class CameraSystem : MonoBehaviour
 {

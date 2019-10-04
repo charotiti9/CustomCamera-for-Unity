@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[DisallowMultipleComponent]
 /// <summary>
 /// 카메라의 초기위치를 설정하고, 타겟을 가지고 있음
 /// 각 카메라 시스템들의 함수를 호출하고 일괄처리
 /// </summary>
+[DisallowMultipleComponent]
 public class CameraManager : MonoBehaviour
 {
     #region 전역변수
@@ -114,7 +114,7 @@ public class CameraManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 후처리 최종 위치 설정(Zoom, Move)
+    /// 후처리 최종 위치 설정
     /// </summary>
     void PostTransform()
     {

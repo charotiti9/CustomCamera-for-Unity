@@ -10,7 +10,7 @@ public class TransformZoom_MouseDrag : CameraSystem
         RightClick,
         WheelClick
     }
-    [Header("마우스 클릭으로 움직이게 할것인지 결정")]
+    [Header("마우스 클릭 여부")]
     public bool requireClick = true;
     [Header("마우스 입력키")]
     public MouseInput mouseInput = MouseInput.LeftClick;

@@ -14,17 +14,12 @@ public class FovZoom_Wheel : CameraSystem
 
     private bool isCoroutine;                    // 항상 실행되지 않게 하기 위해
     
-    /// <summary>
-    /// CameraController에서 실행할 공통된 스타트 부분
-    /// </summary>
+
     public override void CommonStart()
     {
 
     }
 
-    /// <summary>
-    /// CameraController에서 실행할 공통된 업데이트 부분
-    /// </summary>
     public override void CommonUpdate()
     {
         if (isActive)

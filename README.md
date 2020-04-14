@@ -22,7 +22,7 @@ Art and designers know how to deal with Unity, but many have had trouble with th
 컴포넌트를 메인카메라에 드래그 합니다.  
 Just Drag Component in your main camera.
 
-<img src="https://vo.la/Phox" width="60%">
+<img src="https://user-images.githubusercontent.com/47441135/79203290-c9321f00-7e75-11ea-89ac-46008e10db13.gif" width="60%">
 
 컴포넌트의 위치는 `CustomCamera/Scripts/Feature`입니다.  
 기능을 드래그하면 자동으로 `CameraManager.cs`가 생성됩니다.
